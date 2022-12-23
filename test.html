@@ -1,38 +1,24 @@
-<!DOCTYPE >
+<!DOCTYPE>
 <html>
 
-    <head>
-        <title></title>
-        <meta charset="utf-8">
-        <style>
-            #div1 {
-                width: 200px;
-                height: 100px;
-                background-color: #ccc;
-                border: 1px solid #999;
-                display: none;
-            }
-        </style>
-        <script>
-            window.onload = function() {
-				console.log(1111111111);
-                var input1 = document.getElementById('input1');
-                var div1 = document.getElementById('div1');
-                input1.onmouseover = function() {
-                    div1.style.display = 'block';
-                }
-                input1.onmouseout = function() {
-                    div1.style.display = 'none';
-                }
-            }
-        </script>
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <title>javascript怎么做图片滚动</title>
+</head>
+<link rel="stylesheet" href="css/gundong.css" />
+<script type="text/javascript" src="js/gundong.js"></script>
 
-    <body>
-        <input id="input1" type="checkbox" value="checkbox" />
-        <div id="div1">
-            为了您的信息安全...
-        </div>
-    </body>
+<body>
+    <div id="div1">
+        <ul>
+            <li><img src="HOME _ Jiarongxie_files/1e68ed_005c52d34df74af2b4c37d4c4d0cbf29_mv2.jpg"></li>
+            <li><img src="HOME _ Jiarongxie_files/1e68ed_14fb48a067ea45aa86c3241884d2cb11_mv2.jpg"></li>
+            <li><img src="HOME _ Jiarongxie_files/1e68ed_2879319be07049e5872f32c2f8ec991e_mv2.jpg"></li>
+            <li><img src="img/gif-4.png"></li>
+        </ul>
+    </div>
+    <a href="javascript:;">向左滚动</a>
+    <a href="javascript:;">向右滚动</a>
+</body>
 
 </html>
