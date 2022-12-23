@@ -22,6 +22,21 @@
     <script nomodule="" src="./contact_files/polyfill.min.js.download"></script>
 
     <!-- Performance API Polyfills -->
+      
+    <script>
+        window.onload = function() {
+            let gallery_li = document.getElementById("gallery_li");        
+            gallery_li.onmouseover = function () {   
+                let gallery = document.getElementById("gallery");
+                gallery.classList.add('_1l0q9');       
+            }
+            gallery.onmouseout = function () {
+                let gallery = document.getElementById("gallery");
+                gallery.getElementById("gallery").classList.remove('_1l0q9');    
+            }
+        }
+    </script>
+
     <script>
         (function () {
             var noop = function noop() { };
@@ -7717,9 +7732,9 @@
                                                                                 class="_2k246"
                                                                                 tabindex="0">HOME</a></span></div>
                                                                 </li>
-                                                                <li class="pUFUa">
+                                                                <li class="pUFUa" id="gallery_li">
                                                                     <div data-testid="itemContentWrapper-1"
-                                                                        class="_1ck8d PE9dp"><span class="bWIrm">
+                                                                        class="_1ck8d PE9dp" id="gallery"><span class="bWIrm">
                                                                             <div data-testid="linkElement-1"
                                                                                 class="_2k246" tabindex="0"
                                                                                 aria-haspopup="true">GALLERY</div>

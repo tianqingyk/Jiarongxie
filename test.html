@@ -1,126 +1,38 @@
-<!DOCTYPE html>
+<!DOCTYPE >
 <html>
 
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title></title>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <style>
+            #div1 {
+                width: 200px;
+                height: 100px;
+                background-color: #ccc;
+                border: 1px solid #999;
+                display: none;
+            }
+        </style>
+        <script>
+            window.onload = function() {
+				console.log(1111111111);
+                var input1 = document.getElementById('input1');
+                var div1 = document.getElementById('div1');
+                input1.onmouseover = function() {
+                    div1.style.display = 'block';
+                }
+                input1.onmouseout = function() {
+                    div1.style.display = 'none';
+                }
+            }
+        </script>
+    </head>
 
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/center.js"></script>
-
-	</head>
-
-	<style type="text/css">
-		.img_content {
-			width: 600px;
-			margin: 0;
-			padding: 0;
-			height: 200px;
-			position: absolute;
-			overflow: hidden;
-		}
-		
-		.img_content ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-			position: absolute;
-			width: 1000px;
-		}
-		
-		.img_content ul li {
-			float: left;
-			margin: 0;
-			padding: 0;
-		}
-		
-		.img_content ul li img {
-			width: 200px;
-			height: 200px;
-		}
-		
-		button {
-			width: 100px;
-			height: 40px;
-			border-radius: 5px;
-			background: cornflowerblue;
-			color: white;
-			border: 0;
-		}
-	</style>
-
-	<body>
-
-		<div class="img_content">
-
-			<ul>
-				<li><img src="/HOME _ Jiarongxie_files/1e68ed_005c52d34df74af2b4c37d4c4d0cbf29_mv2.jpg" /> </li>
-				<li><img src="/HOME _ Jiarongxie_files/1e68ed_005c52d34df74af2b4c37d4c4d0cbf29_mv2.jpg"  /> </li>
-				<li><img src="/HOME _ Jiarongxie_files/1e68ed_005c52d34df74af2b4c37d4c4d0cbf29_mv2.jpg"  /> </li>
-
-			</ul>
-		</div>
-
-		<button id="left">左</button>
-		<button id="right">右</button>
-		<button id="auto">自动切换</button>
-		<button id="stop">取消自动切换</button>
-
-		<script>
-			centerParent($('.img_content')[0]);
-
-			$('#left').click(function() {
-				scrollLeft();
-			});
-
-			$('#right').click(function() {
-				scrollRight();
-			});
-
-			/*向左滑动*/
-			function scrollLeft() {
-
-				/*先向左移动一个图片的宽度  移动后在末尾追加第一个元素 然后将第一个元素移除 */
-				$('ul').animate({
-					left: -200
-				}, 200, function() {
-					$('ul').append($('ul li:first').clone());
-					$('ul li:first').remove();
-				});
-
-				/*将left值置为0*/
-				$('ul').animate({
-					left: 0
-				}, 0);
-			}
-
-			/*向右滑动*/
-			function scrollRight() {
-				/*先向右移动一个图片的宽度  移动后把最后一个元素插入到头部 然后移除最后一个元素*/
-				$('ul').animate({
-					left: -200
-				}, 0, function() {
-					$('ul').prepend($('ul li:last').clone());
-					$('ul li:last').remove();
-				});
-
-				/*完成上面动作后将left置为0*/
-				$('ul').animate({
-					left: 0
-				}, 200);
-			}
-
-			var auto;
-			$('#auto').click(function() {
-				auto = setInterval(scrollLeft, 2000);
-			});
-
-			$('#stop').click(function() {
-				clearInterval(auto);
-			});
-		</script>
-
-	</body>
+    <body>
+        <input id="input1" type="checkbox" value="checkbox" />
+        <div id="div1">
+            为了您的信息安全...
+        </div>
+    </body>
 
 </html>
