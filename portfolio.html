@@ -39,28 +39,30 @@
             let video_pre = document.getElementById("video_pre");
             let video_process = document.getElementById("video_process");
             video_pre.style.display = "none";
-            video_process.style.display= "block";
+            video_process.style.display = "block";
+            let ve = video_process.getElementsByTagName("video")[0];
+            ve.play();
         }
     </script>
 
     <script>
-            (function () {
-                var noop = function noop() { };
-                if ("performance" in window === false) {
-                    window.performance = {};
+        (function () {
+            var noop = function noop() { };
+            if ("performance" in window === false) {
+                window.performance = {};
+            }
+            window.performance.mark = performance.mark || noop;
+            window.performance.measure = performance.measure || noop;
+            if ("now" in window.performance === false) {
+                var nowOffset = Date.now();
+                if (performance.timing && performance.timing.navigationStart) {
+                    nowOffset = performance.timing.navigationStart;
                 }
-                window.performance.mark = performance.mark || noop;
-                window.performance.measure = performance.measure || noop;
-                if ("now" in window.performance === false) {
-                    var nowOffset = Date.now();
-                    if (performance.timing && performance.timing.navigationStart) {
-                        nowOffset = performance.timing.navigationStart;
-                    }
-                    window.performance.now = function now() {
-                        return Date.now() - nowOffset;
-                    };
-                }
-            })();
+                window.performance.now = function now() {
+                    return Date.now() - nowOffset;
+                };
+            }
+        })();
     </script>
 
     <!-- Globals Definitions -->
@@ -8668,7 +8670,8 @@
                                                             <div data-mesh-id="comp-l9j1zhjainlineContent-gridContainer"
                                                                 data-testid="mesh-container-content">
                                                                 <div id="comp-l9juk3sb"
-                                                                    class="VideoPlayer2054936319__root" data-scope data-repeater-items-indexes>
+                                                                    class="VideoPlayer2054936319__root" data-scope
+                                                                    data-repeater-items-indexes>
                                                                     <div id="video_pre">
                                                                         <div data-player-name="Playable"
                                                                             data-testid="playable"
@@ -9249,7 +9252,545 @@
                                                                         </div>
                                                                     </div>
                                                                     <div id="video_process" style="display: none;">
-                                                                        <div data-player-name="Playable" data-testid="playable" class="VideoPlayer2054936319__playerContainer"><div data-playable-hook="player-container" dir="ltr" data-playable-dir="ltr" tabindex="0" class="_2OeOV _2SCMs"><div class="_18w0f _3iUgY" data-playable-component=""> <div class="igUwQ" data-playable-hook="debug-panel-close-button"> x </div> <pre class="_3_zUy" data-playable-hook="debug-panel-info-container"> </pre></div><div class="rn5n2" data-playable-component=""></div><div class="eQDga _3G3KC _1c8Zv _1CzL_" data-playable-hook="screen-block" data-playable-component=""> <canvas class="_1i_ju" data-playable-hook="background-canvas" width="925" height="523"></canvas><video preload="none" playsinline="true" src="https://video.wixstatic.com/video/1e68ed_012c9950dcc047c296093fe036abe5da/1080p/mp4/file.mp4"></video></div><div class="_1cZSO _30BjC" data-playable-component=""> <div class="_1yPU8" data-playable-hook="preview-full-size-frame"> </div></div><div class="_1Slzl" data-playable-component=""><div data-playable-hook="top-block" class="_2Olaw"> <div class="_3PKZ5" data-playable-hook="screen-top-background"> </div> <div class="_2N1Ds"> <div class="k2S7f" data-playable-hook="live-indicator-container"> <div class="_2K_76 Yoywz"> <button tabindex="0" class="_2WDQV _3Hf1N" aria-label="Sync to live" data-playable-hook="live-indicator-button" disabled="true">Live</button></div></div> <div class="_2ONzZ _2aTpx" data-playable-hook="title-container"> <div class="_1TPj9 wix-playable--title-text" data-playable-hook="video-title">Your Video Title</div></div> </div></div><div class="_1Rph5"><div class="_2JP8u" data-playable-component=""><div class="_1GJnU _3ckA8" role="tooltip"> <div class="_2uSxE" data-playable-hook="tooltip-inner">Mute</div></div></div></div><div data-playable-hook="bottom-block" class="_13Hv7 _2135O _1CKpL"> <div class="_1Y1PK" data-playable-hook="screen-bottom-background"> </div> <div class="_2IDTl" data-playable-hook="progress-bar-container"> <div data-playable-hook="progress-control" class="_1dAvo" tabindex="0" aria-valuetext="Already played 43.03%" aria-valuenow="43.03" data-playable-played-percent="43.03"> <div class="_3TrO3"> <div class="_1g0eY x4RIn"> </div> <div data-playable-hook="progress-buffered" class="_1g0eY zUqPe" style="width:78.94%;"> </div> <div data-playable-hook="progress-seek-to" class="_1g0eY _1oEJ- wix-playable--progress-seek-to"> </div> <div data-playable-hook="progress-played" class="_1g0eY _23ncq wix-playable--progress-played" style="transform: scaleX(0.43);"> </div> <div data-playable-hook="progress-time-indicators" class="_2d2q_"></div> </div> <div data-playable-hook="progress-hitbox" class="_3tm6W"> </div> <div data-playable-hook="progress-seek-button" class="_3wEZR" style="transform: translateX(380.815px);"> <div class="_3e6sO wix-playable--progress-seek-btn"> </div> </div> <div data-playable-hook="progress-sync-button" class="_1eTG3 _2J6aW"> </div></div></div> <div class="_1q0Hh"> <div class="j5T60" data-playable-hook="controls-container-left"> <div class="_2qDfK" data-playable-hook="play-container"> <div class="_220Sy" data-playable-hook="playback-control" data-playable-is-playing="true"> <button class="_3DBKa _3lwRE" data-playable-hook="playback-control" aria-label="Pause" type="button" tabindex="0"> <div class="F2sJM"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" preserveAspectRatio="xMidYMin slice" class="_39Q11" width="100%"> <path class="wix-playable--play-svg-fill" d="M8 6v14l10.25-7.18L8 6z"></path> </svg> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" preserveAspectRatio="xMidYMin slice" class="_2xTsF" width="100%"> <path class="wix-playable--play-svg-fill" d="M10 7v21l16-11L10 7z"></path> </svg> </div> <div class="_3-ZyK"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" preserveAspectRatio="xMidYMin slice" class="_39Q11" width="100%"> <path class="wix-playable--play-svg-fill" d="M15 6h3v14h-3V6zM8 6h3v14H8V6z"></path> </svg> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" preserveAspectRatio="xMidYMin slice" class="_2xTsF" width="100%"> <path class="wix-playable--play-svg-fill" d="M10 7h5v21h-5V7zm10 0h5v21h-5V7z"></path> </svg> </div> </button></div></div> <div class="_2Eq_1" data-playable-hook="volume-container"> <div class="_2psdc" data-playable-hook="volume-control" data-playable-volume-percent="100" data-playable-is-muted="false"> <button class="_1PIGG pi3qL _1gRgh" data-playable-hook="mute-button" aria-label="Mute" type="button" tabindex="0"> <div class="_3TzRA _3ov3D"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" preserveAspectRatio="xMidYMin slice" class="_274wt" width="100%"> <path fill-rule="evenodd" class="wix-playable--volume-svg-fill" d="M 18.5 14.0476 L 16.154 16.3936 L 15.372 15.6116 L 17.718 13.2656 L 15.372 10.9196 L 16.154 10.1376 L 18.5 12.4836 L 20.846 10.1376 L 21.628 10.9196 L 19.282 13.2656 L 21.628 15.6116 L 20.846 16.3936 L 18.5 14.0476 Z M 7 9.76563 L 13 5.76563 L 13 19.7656 L 7 15.7656 L 4 15.7656 L 4 9.76563 L 7 9.76563 Z"></path> </svg> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" preserveAspectRatio="xMidYMin slice" class="_1a598" width="100%"> <path fill-rule="evenodd" class="wix-playable--volume-svg-fill" d="M23.586 18.04l-2.829-2.828 1.415-1.415L25 16.626l2.828-2.83 1.415 1.416-2.829 2.828 2.829 2.828-1.415 1.415L25 19.453l-2.828 2.83-1.415-1.415 2.829-2.828zM9 13.04l7-5v19l-7-5H5v-9h4z"></path> </svg> </div> <div class="_3LZ5P"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" preserveAspectRatio="xMidYMin slice" class="_274wt" width="100%"> <path fill-rule="evenodd" class="wix-playable--volume-svg-fill" d="M 7 9.8025 L 13 5.8025 L 13 19.8025 L 7 15.8025 L 4 15.8025 L 4 9.8025 L 7 9.8025 Z M 17.243 17.4285 L 16.216 16.4025 A 4.548 4.548 0 0 0 16.216 9.9705 L 17.243 8.9435 A 6 6 0 0 1 17.243 17.4285 Z"></path> </svg> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" preserveAspectRatio="xMidYMin slice" class="_1a598" width="100%"> <path class="wix-playable--volume-svg-fill" d="M9 13l7-5v19l-7-5H5v-9h4zm12.884 11.407l-1.414-1.414a7.174 7.174 0 000-10.146l1.414-1.414a9.174 9.174 0 010 12.974z" fill-rule="evenodd"></path> </svg> </div> <div class="_3U6Y1"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" preserveAspectRatio="xMidYMin slice" class="_274wt" width="100%"> <path fill-rule="evenodd" class="wix-playable--volume-svg-fill" d="M 7 9.8025 L 13 5.8025 L 13 19.8025 L 7 15.8025 L 4 15.8025 L 4 9.8025 L 7 9.8025 Z M 20.071 20.1975 L 19.047 19.1725 A 8.552 8.552 0 0 0 19.047 7.0795 L 20.071 6.0545 C 23.976 9.9605 23.976 16.2915 20.071 20.1975 Z M 17.243 17.4285 L 16.216 16.4025 A 4.548 4.548 0 0 0 16.216 9.9705 L 17.243 8.9435 A 6 6 0 0 1 17.243 17.4285 Z"></path> </svg> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" preserveAspectRatio="xMidYMin slice" class="_1a598" width="100%"> <path fill-rule="evenodd" class="wix-playable--volume-svg-fill" d="M9 13.04l7-5v19l-7-5H5v-9h4zm16.897 15.794l-1.414-1.414c5.237-5.238 5.237-13.73 0-18.966l1.414-1.414c6.018 6.018 6.018 15.776 0 21.794zm-4.013-4.387l-1.414-1.414a7.174 7.174 0 000-10.146l1.414-1.414a9.174 9.174 0 010 12.974z"></path> </svg> </div> </button> <div class="_3ITiU" data-playable-hook="volume-input-block" aria-label="Volume control" aria-valuemin="0" aria-valuenow="100" aria-valuemax="100" tabindex="0" value="100" aria-valuetext="Volume is undefined%"> <div class="_2gxEm _3UTni wix-playable--volume-progress-background"> </div> <div class="_2gxEm _3_4ce wix-playable--volume-progress" data-playable-hook="volume-input" style="width:100%;"> </div> <div class="_33Mub" data-playable-hook="volume-hitbox"> </div> </div></div></div> <div class="_1cJ4V" data-playable-hook="time-container"> <div data-playable-hook="time-control" class="_3Kqa4 wix-playable--time-text" data-playable-current-time="23.286864" data-playable-duration="54.122"> <span data-playable-hook="current-time-indicator" class="DIWz5">00:23</span> <span data-playable-hook="duration-time-indicator" class="DIWz5 lHicC">00:54</span></div></div> </div> <div class="_3Q5f0" data-playable-hook="controls-container-right"> <div class="_37WQi" data-playable-hook="picture-in-picture-container"> <div class="_3BN26" data-playable-hook="picture-in-picture-control" data-is-picture-in-picture="false"> <button class="_3o28m _1Gy9R" data-playable-hook="picture-in-picture-control" aria-label="Play Picture-in-Picture" type="button" tabindex="0"> <div class="_2eX9U"> <svg class="_3zwPn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" preserveAspectRatio="xMidYMin slice" width="100%"> <g fill-rule="evenodd" class="wix-playable--picture-in-picture-svg-fill"> <path d="M11 19H5V6h15v5h-2V8H7v9h4v2z"></path> <path d="M13 13h9v8h-9v-8zm2 2v4h5v-4h-5z"></path> </g> </svg> <svg class="_2Ur1S" viewBox="0 0 35 35" version="1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMin slice" width="100%"> <g fill-rule="evenodd" class="wix-playable--picture-in-picture-svg-fill"> <path d="M14 26H5V7h22v7h-2V9H7v15h7v2z"></path> <path d="M17 17h12v11H17V17zm2 2v7h8v-7h-8z"></path> </g> </svg> </div> <div class="OtUx1"> <svg class="_3zwPn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" preserveAspectRatio="xMidYMin slice" width="100%"> <g fill-rule="evenodd" class="wix-playable--picture-in-picture-svg-fill"> <path d="M12 19H5V6h15v5h-2V8H7v9h5v2z"></path> <path d="M21 15h-7v-2h7v2z"></path> <path d="M16 20v-7h-2v7h2z"></path> <path d="M21.279 18.95l-1.415 1.414-4.95-4.95L16.329 14l4.95 4.95z"></path> </g> </svg> <svg class="_2Ur1S" viewBox="0 0 35 35" version="1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMin slice" width="100%"> <g fill-rule="evenodd" class="wix-playable--picture-in-picture-svg-fill"> <path d="M17 26H5V7h22v9h-2V9H7v15h10v2z"></path> <path d="M28 21h-8v-2h8v2z"></path> <path d="M22 27v-8h-2v8h2z"></path> <path d="M29 27l-1 1-7-6 2-2 6 7z"></path> </g> </svg> </div> </button></div></div> <div class="_1oMVv" data-playable-hook="download-container"> <div class="_1zu08"> <button class="_1DUyz MFh2F" data-playable-hook="download-button" aria-label="Download video" type="button" tabindex="0"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" class="_2N2nU" width="100%"> <g fill-rule="evenodd" class="wix-playable--download-svg-fill"> <path d="M6 18h14v2H6v-2zm3.586-8.328L13 13.025v2.708l-4.828-4.647 1.414-1.414zM13 13.123l3.618-3.655 1.414 1.414L13 15.749v-2.626z"></path> <path d="M12 6h2v8l-1 2-1-2V6z"></path> </g> </svg> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" class="_1pfJh" width="100%"> <path d="M16.5 17.586V7h2v10.825L23.571 13l1.414 1.414-7.085 6.743-.329.328-7.071-7.07L11.914 13l4.586 4.586zM5.5 26h24v2h-24v-2z" fill-rule="evenodd"></path> </svg> </button></div></div> <div class="_1dEJZ" data-playable-hook="full-screen-container"> <div class="_1OBr8" data-playable-hook="full-screen-control"> <button class="qHUBa _3j5si" data-playable-hook="full-screen-button" aria-label="Enter full screen" type="button" tabindex="0"> <svg class="_1G0_t" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" preserveAspectRatio="xMidYMin slice" width="100%"> <path class="wix-playable--full-screen-svg-fill" fill-rule="evenodd" d="M8 16H6v4h4v-2H8v-2zM6 7v3h2V8h2V6H6v1zm14-1h-4v2h2v2h2V6zm-2 12h-2v2h4v-4h-2v2z"></path> </svg> <svg class="_1WxBR" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" preserveAspectRatio="xMidYMin slice" width="100%"> <path class="wix-playable--full-screen-svg-fill" fill-rule="evenodd" d="M11 28h2v-6H7v2h4v4zm2-21h-2v4H7v2h6V7zm9 6h6v-2h-4V7h-2v6zm2 11h4v-2h-6v6h2v-4z"></path> </svg> </button></div></div> </div> <div class="_1NskT" data-playable-hook="logo-container"> <div class="_34dqY"><button class="_1BWPp MwmcC" aria-label="Watch on site" type="button" tabindex="0"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" class="_2fFIh" preserveAspectRatio="xMidYMin slice" width="100%"> <path fill-rule="evenodd" class="wix-playable--logo-button-svg-fill" d="M8 20H6V6h4v2H8v10h10v-2h2v4H8zM18 9.485l-4.586 4.586L12 12.657 16.657 8h-1.653V6H20v5.005h-2v-1.52z"></path> </svg> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" class="J-VLB" preserveAspectRatio="xMidYMin slice" width="100%"> <path fill-rule="evenodd" class="wix-playable--logo-button-svg-fill" d="M9 28H7V7h7.071v2H9v17h17v-5h2v7H9zm17-17.98l-8.586 8.587L16 17.192 24.192 9h-2.184V7H28v6.012h-2V10.02z"></path> </svg></button></div></div> </div></div></div><div class="_29jrw BQnh4" data-playable-component="" data-playable-hook="loader"></div><div class="_1CRej _27HtR _31JZ-" data-playable-hook="overlay" data-playable-component=""> <div class="_2tFRk" data-playable-hook="overlay-content" style="background-image: none;"> </div> <div class="_13Oo9" data-playable-hook="overlay-play-button"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" preserveAspectRatio="xMidYMin slice" width="100%" style="padding-bottom: 100%; height: 1px; overflow: visible"> <!-- padding-bottom: 100% * height/width --> <g fill="none" fill-rule="evenodd"> <circle cx="18" cy="18" r="17" class="wix-playable--overlay-play-svg-stroke" stroke-width="2"></circle> <path class="wix-playable--overlay-play-svg-fill" d="M23.935 17.708l-10.313 6.033V11.676z"></path> </g> </svg> </div></div></div></div>
+                                                                        <div data-player-name="Playable"
+                                                                            data-testid="playable"
+                                                                            class="VideoPlayer2054936319__playerContainer">
+                                                                            <div data-playable-hook="player-container"
+                                                                                dir="ltr" data-playable-dir="ltr"
+                                                                                tabindex="0" class="_2OeOV _2SCMs">
+                                                                                <div class="_18w0f _3iUgY"
+                                                                                    data-playable-component="">
+                                                                                    <div class="igUwQ"
+                                                                                        data-playable-hook="debug-panel-close-button">
+                                                                                        x </div>
+                                                                                    <pre class="_3_zUy"
+                                                                                        data-playable-hook="debug-panel-info-container"> </pre>
+                                                                                </div>
+                                                                                <div class="rn5n2"
+                                                                                    data-playable-component=""></div>
+                                                                                <div class="eQDga _3G3KC _1c8Zv _1CzL_"
+                                                                                    data-playable-hook="screen-block"
+                                                                                    data-playable-component=""> <canvas
+                                                                                        class="_1i_ju"
+                                                                                        data-playable-hook="background-canvas"
+                                                                                        width="925"
+                                                                                        height="523"></canvas><video
+                                                                                        preload="none"
+                                                                                        playsinline="true"
+                                                                                        src="https://video.wixstatic.com/video/1e68ed_012c9950dcc047c296093fe036abe5da/1080p/mp4/file.mp4"></video>
+                                                                                </div>
+                                                                                <div class="_1cZSO _30BjC"
+                                                                                    data-playable-component="">
+                                                                                    <div class="_1yPU8"
+                                                                                        data-playable-hook="preview-full-size-frame">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="_1Slzl"
+                                                                                    data-playable-component="">
+                                                                                    <div data-playable-hook="top-block"
+                                                                                        class="_2Olaw">
+                                                                                        <div class="_3PKZ5"
+                                                                                            data-playable-hook="screen-top-background">
+                                                                                        </div>
+                                                                                        <div class="_2N1Ds">
+                                                                                            <div class="k2S7f"
+                                                                                                data-playable-hook="live-indicator-container">
+                                                                                                <div
+                                                                                                    class="_2K_76 Yoywz">
+                                                                                                    <button tabindex="0"
+                                                                                                        class="_2WDQV _3Hf1N"
+                                                                                                        aria-label="Sync to live"
+                                                                                                        data-playable-hook="live-indicator-button"
+                                                                                                        disabled="true">Live</button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="_2ONzZ _2aTpx"
+                                                                                                data-playable-hook="title-container">
+                                                                                                <div class="_1TPj9 wix-playable--title-text"
+                                                                                                    data-playable-hook="video-title">
+                                                                                                    Your Video Title
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="_1Rph5">
+                                                                                        <div class="_2JP8u"
+                                                                                            data-playable-component="">
+                                                                                            <div class="_1GJnU _3ckA8"
+                                                                                                role="tooltip">
+                                                                                                <div class="_2uSxE"
+                                                                                                    data-playable-hook="tooltip-inner">
+                                                                                                    Mute</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div data-playable-hook="bottom-block"
+                                                                                        class="_13Hv7 _2135O _1CKpL">
+                                                                                        <div class="_1Y1PK"
+                                                                                            data-playable-hook="screen-bottom-background">
+                                                                                        </div>
+                                                                                        <div class="_2IDTl"
+                                                                                            data-playable-hook="progress-bar-container">
+                                                                                            <div data-playable-hook="progress-control"
+                                                                                                class="_1dAvo"
+                                                                                                tabindex="0"
+                                                                                                aria-valuetext="Already played 43.03%"
+                                                                                                aria-valuenow="43.03"
+                                                                                                data-playable-played-percent="43.03">
+                                                                                                <div class="_3TrO3">
+                                                                                                    <div
+                                                                                                        class="_1g0eY x4RIn">
+                                                                                                    </div>
+                                                                                                    <div data-playable-hook="progress-buffered"
+                                                                                                        class="_1g0eY zUqPe"
+                                                                                                        style="width:78.94%;">
+                                                                                                    </div>
+                                                                                                    <div data-playable-hook="progress-seek-to"
+                                                                                                        class="_1g0eY _1oEJ- wix-playable--progress-seek-to">
+                                                                                                    </div>
+                                                                                                    <div data-playable-hook="progress-played"
+                                                                                                        class="_1g0eY _23ncq wix-playable--progress-played"
+                                                                                                        style="transform: scaleX(0.43);">
+                                                                                                    </div>
+                                                                                                    <div data-playable-hook="progress-time-indicators"
+                                                                                                        class="_2d2q_">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div data-playable-hook="progress-hitbox"
+                                                                                                    class="_3tm6W">
+                                                                                                </div>
+                                                                                                <div data-playable-hook="progress-seek-button"
+                                                                                                    class="_3wEZR"
+                                                                                                    style="transform: translateX(380.815px);">
+                                                                                                    <div
+                                                                                                        class="_3e6sO wix-playable--progress-seek-btn">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div data-playable-hook="progress-sync-button"
+                                                                                                    class="_1eTG3 _2J6aW">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="_1q0Hh">
+                                                                                            <div class="j5T60"
+                                                                                                data-playable-hook="controls-container-left">
+                                                                                                <div class="_2qDfK"
+                                                                                                    data-playable-hook="play-container">
+                                                                                                    <div class="_220Sy"
+                                                                                                        data-playable-hook="playback-control"
+                                                                                                        data-playable-is-playing="true">
+                                                                                                        <button
+                                                                                                            class="_3DBKa _3lwRE"
+                                                                                                            data-playable-hook="playback-control"
+                                                                                                            aria-label="Pause"
+                                                                                                            type="button"
+                                                                                                            tabindex="0">
+                                                                                                            <div
+                                                                                                                class="F2sJM">
+                                                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                                    viewBox="0 0 26 26"
+                                                                                                                    preserveAspectRatio="xMidYMin slice"
+                                                                                                                    class="_39Q11"
+                                                                                                                    width="100%">
+                                                                                                                    <path
+                                                                                                                        class="wix-playable--play-svg-fill"
+                                                                                                                        d="M8 6v14l10.25-7.18L8 6z">
+                                                                                                                    </path>
+                                                                                                                </svg>
+                                                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                                    viewBox="0 0 35 35"
+                                                                                                                    preserveAspectRatio="xMidYMin slice"
+                                                                                                                    class="_2xTsF"
+                                                                                                                    width="100%">
+                                                                                                                    <path
+                                                                                                                        class="wix-playable--play-svg-fill"
+                                                                                                                        d="M10 7v21l16-11L10 7z">
+                                                                                                                    </path>
+                                                                                                                </svg>
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="_3-ZyK">
+                                                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                                    viewBox="0 0 26 26"
+                                                                                                                    preserveAspectRatio="xMidYMin slice"
+                                                                                                                    class="_39Q11"
+                                                                                                                    width="100%">
+                                                                                                                    <path
+                                                                                                                        class="wix-playable--play-svg-fill"
+                                                                                                                        d="M15 6h3v14h-3V6zM8 6h3v14H8V6z">
+                                                                                                                    </path>
+                                                                                                                </svg>
+                                                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                                    viewBox="0 0 35 35"
+                                                                                                                    preserveAspectRatio="xMidYMin slice"
+                                                                                                                    class="_2xTsF"
+                                                                                                                    width="100%">
+                                                                                                                    <path
+                                                                                                                        class="wix-playable--play-svg-fill"
+                                                                                                                        d="M10 7h5v21h-5V7zm10 0h5v21h-5V7z">
+                                                                                                                    </path>
+                                                                                                                </svg>
+                                                                                                            </div>
+                                                                                                        </button></div>
+                                                                                                </div>
+                                                                                                <div class="_2Eq_1"
+                                                                                                    data-playable-hook="volume-container">
+                                                                                                    <div class="_2psdc"
+                                                                                                        data-playable-hook="volume-control"
+                                                                                                        data-playable-volume-percent="100"
+                                                                                                        data-playable-is-muted="false">
+                                                                                                        <button
+                                                                                                            class="_1PIGG pi3qL _1gRgh"
+                                                                                                            data-playable-hook="mute-button"
+                                                                                                            aria-label="Mute"
+                                                                                                            type="button"
+                                                                                                            tabindex="0">
+                                                                                                            <div
+                                                                                                                class="_3TzRA _3ov3D">
+                                                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                                    viewBox="0 0 26 26"
+                                                                                                                    preserveAspectRatio="xMidYMin slice"
+                                                                                                                    class="_274wt"
+                                                                                                                    width="100%">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        class="wix-playable--volume-svg-fill"
+                                                                                                                        d="M 18.5 14.0476 L 16.154 16.3936 L 15.372 15.6116 L 17.718 13.2656 L 15.372 10.9196 L 16.154 10.1376 L 18.5 12.4836 L 20.846 10.1376 L 21.628 10.9196 L 19.282 13.2656 L 21.628 15.6116 L 20.846 16.3936 L 18.5 14.0476 Z M 7 9.76563 L 13 5.76563 L 13 19.7656 L 7 15.7656 L 4 15.7656 L 4 9.76563 L 7 9.76563 Z">
+                                                                                                                    </path>
+                                                                                                                </svg>
+                                                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                                    viewBox="0 0 35 35"
+                                                                                                                    preserveAspectRatio="xMidYMin slice"
+                                                                                                                    class="_1a598"
+                                                                                                                    width="100%">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        class="wix-playable--volume-svg-fill"
+                                                                                                                        d="M23.586 18.04l-2.829-2.828 1.415-1.415L25 16.626l2.828-2.83 1.415 1.416-2.829 2.828 2.829 2.828-1.415 1.415L25 19.453l-2.828 2.83-1.415-1.415 2.829-2.828zM9 13.04l7-5v19l-7-5H5v-9h4z">
+                                                                                                                    </path>
+                                                                                                                </svg>
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="_3LZ5P">
+                                                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                                    viewBox="0 0 26 26"
+                                                                                                                    preserveAspectRatio="xMidYMin slice"
+                                                                                                                    class="_274wt"
+                                                                                                                    width="100%">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        class="wix-playable--volume-svg-fill"
+                                                                                                                        d="M 7 9.8025 L 13 5.8025 L 13 19.8025 L 7 15.8025 L 4 15.8025 L 4 9.8025 L 7 9.8025 Z M 17.243 17.4285 L 16.216 16.4025 A 4.548 4.548 0 0 0 16.216 9.9705 L 17.243 8.9435 A 6 6 0 0 1 17.243 17.4285 Z">
+                                                                                                                    </path>
+                                                                                                                </svg>
+                                                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                                    viewBox="0 0 35 35"
+                                                                                                                    preserveAspectRatio="xMidYMin slice"
+                                                                                                                    class="_1a598"
+                                                                                                                    width="100%">
+                                                                                                                    <path
+                                                                                                                        class="wix-playable--volume-svg-fill"
+                                                                                                                        d="M9 13l7-5v19l-7-5H5v-9h4zm12.884 11.407l-1.414-1.414a7.174 7.174 0 000-10.146l1.414-1.414a9.174 9.174 0 010 12.974z"
+                                                                                                                        fill-rule="evenodd">
+                                                                                                                    </path>
+                                                                                                                </svg>
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="_3U6Y1">
+                                                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                                    viewBox="0 0 26 26"
+                                                                                                                    preserveAspectRatio="xMidYMin slice"
+                                                                                                                    class="_274wt"
+                                                                                                                    width="100%">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        class="wix-playable--volume-svg-fill"
+                                                                                                                        d="M 7 9.8025 L 13 5.8025 L 13 19.8025 L 7 15.8025 L 4 15.8025 L 4 9.8025 L 7 9.8025 Z M 20.071 20.1975 L 19.047 19.1725 A 8.552 8.552 0 0 0 19.047 7.0795 L 20.071 6.0545 C 23.976 9.9605 23.976 16.2915 20.071 20.1975 Z M 17.243 17.4285 L 16.216 16.4025 A 4.548 4.548 0 0 0 16.216 9.9705 L 17.243 8.9435 A 6 6 0 0 1 17.243 17.4285 Z">
+                                                                                                                    </path>
+                                                                                                                </svg>
+                                                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                                    viewBox="0 0 35 35"
+                                                                                                                    preserveAspectRatio="xMidYMin slice"
+                                                                                                                    class="_1a598"
+                                                                                                                    width="100%">
+                                                                                                                    <path
+                                                                                                                        fill-rule="evenodd"
+                                                                                                                        class="wix-playable--volume-svg-fill"
+                                                                                                                        d="M9 13.04l7-5v19l-7-5H5v-9h4zm16.897 15.794l-1.414-1.414c5.237-5.238 5.237-13.73 0-18.966l1.414-1.414c6.018 6.018 6.018 15.776 0 21.794zm-4.013-4.387l-1.414-1.414a7.174 7.174 0 000-10.146l1.414-1.414a9.174 9.174 0 010 12.974z">
+                                                                                                                    </path>
+                                                                                                                </svg>
+                                                                                                            </div>
+                                                                                                        </button>
+                                                                                                        <div class="_3ITiU"
+                                                                                                            data-playable-hook="volume-input-block"
+                                                                                                            aria-label="Volume control"
+                                                                                                            aria-valuemin="0"
+                                                                                                            aria-valuenow="100"
+                                                                                                            aria-valuemax="100"
+                                                                                                            tabindex="0"
+                                                                                                            value="100"
+                                                                                                            aria-valuetext="Volume is undefined%">
+                                                                                                            <div
+                                                                                                                class="_2gxEm _3UTni wix-playable--volume-progress-background">
+                                                                                                            </div>
+                                                                                                            <div class="_2gxEm _3_4ce wix-playable--volume-progress"
+                                                                                                                data-playable-hook="volume-input"
+                                                                                                                style="width:100%;">
+                                                                                                            </div>
+                                                                                                            <div class="_33Mub"
+                                                                                                                data-playable-hook="volume-hitbox">
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="_1cJ4V"
+                                                                                                    data-playable-hook="time-container">
+                                                                                                    <div data-playable-hook="time-control"
+                                                                                                        class="_3Kqa4 wix-playable--time-text"
+                                                                                                        data-playable-current-time="23.286864"
+                                                                                                        data-playable-duration="54.122">
+                                                                                                        <span
+                                                                                                            data-playable-hook="current-time-indicator"
+                                                                                                            class="DIWz5">00:23</span>
+                                                                                                        <span
+                                                                                                            data-playable-hook="duration-time-indicator"
+                                                                                                            class="DIWz5 lHicC">00:54</span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="_3Q5f0"
+                                                                                                data-playable-hook="controls-container-right">
+                                                                                                <div class="_37WQi"
+                                                                                                    data-playable-hook="picture-in-picture-container">
+                                                                                                    <div class="_3BN26"
+                                                                                                        data-playable-hook="picture-in-picture-control"
+                                                                                                        data-is-picture-in-picture="false">
+                                                                                                        <button
+                                                                                                            class="_3o28m _1Gy9R"
+                                                                                                            data-playable-hook="picture-in-picture-control"
+                                                                                                            aria-label="Play Picture-in-Picture"
+                                                                                                            type="button"
+                                                                                                            tabindex="0">
+                                                                                                            <div
+                                                                                                                class="_2eX9U">
+                                                                                                                <svg class="_3zwPn"
+                                                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                                                    viewBox="0 0 26 26"
+                                                                                                                    preserveAspectRatio="xMidYMin slice"
+                                                                                                                    width="100%">
+                                                                                                                    <g fill-rule="evenodd"
+                                                                                                                        class="wix-playable--picture-in-picture-svg-fill">
+                                                                                                                        <path
+                                                                                                                            d="M11 19H5V6h15v5h-2V8H7v9h4v2z">
+                                                                                                                        </path>
+                                                                                                                        <path
+                                                                                                                            d="M13 13h9v8h-9v-8zm2 2v4h5v-4h-5z">
+                                                                                                                        </path>
+                                                                                                                    </g>
+                                                                                                                </svg>
+                                                                                                                <svg class="_2Ur1S"
+                                                                                                                    viewBox="0 0 35 35"
+                                                                                                                    version="1"
+                                                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                                                    preserveAspectRatio="xMidYMin slice"
+                                                                                                                    width="100%">
+                                                                                                                    <g fill-rule="evenodd"
+                                                                                                                        class="wix-playable--picture-in-picture-svg-fill">
+                                                                                                                        <path
+                                                                                                                            d="M14 26H5V7h22v7h-2V9H7v15h7v2z">
+                                                                                                                        </path>
+                                                                                                                        <path
+                                                                                                                            d="M17 17h12v11H17V17zm2 2v7h8v-7h-8z">
+                                                                                                                        </path>
+                                                                                                                    </g>
+                                                                                                                </svg>
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="OtUx1">
+                                                                                                                <svg class="_3zwPn"
+                                                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                                                    viewBox="0 0 26 26"
+                                                                                                                    preserveAspectRatio="xMidYMin slice"
+                                                                                                                    width="100%">
+                                                                                                                    <g fill-rule="evenodd"
+                                                                                                                        class="wix-playable--picture-in-picture-svg-fill">
+                                                                                                                        <path
+                                                                                                                            d="M12 19H5V6h15v5h-2V8H7v9h5v2z">
+                                                                                                                        </path>
+                                                                                                                        <path
+                                                                                                                            d="M21 15h-7v-2h7v2z">
+                                                                                                                        </path>
+                                                                                                                        <path
+                                                                                                                            d="M16 20v-7h-2v7h2z">
+                                                                                                                        </path>
+                                                                                                                        <path
+                                                                                                                            d="M21.279 18.95l-1.415 1.414-4.95-4.95L16.329 14l4.95 4.95z">
+                                                                                                                        </path>
+                                                                                                                    </g>
+                                                                                                                </svg>
+                                                                                                                <svg class="_2Ur1S"
+                                                                                                                    viewBox="0 0 35 35"
+                                                                                                                    version="1"
+                                                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                                                    preserveAspectRatio="xMidYMin slice"
+                                                                                                                    width="100%">
+                                                                                                                    <g fill-rule="evenodd"
+                                                                                                                        class="wix-playable--picture-in-picture-svg-fill">
+                                                                                                                        <path
+                                                                                                                            d="M17 26H5V7h22v9h-2V9H7v15h10v2z">
+                                                                                                                        </path>
+                                                                                                                        <path
+                                                                                                                            d="M28 21h-8v-2h8v2z">
+                                                                                                                        </path>
+                                                                                                                        <path
+                                                                                                                            d="M22 27v-8h-2v8h2z">
+                                                                                                                        </path>
+                                                                                                                        <path
+                                                                                                                            d="M29 27l-1 1-7-6 2-2 6 7z">
+                                                                                                                        </path>
+                                                                                                                    </g>
+                                                                                                                </svg>
+                                                                                                            </div>
+                                                                                                        </button></div>
+                                                                                                </div>
+                                                                                                <div class="_1oMVv"
+                                                                                                    data-playable-hook="download-container">
+                                                                                                    <div class="_1zu08">
+                                                                                                        <button
+                                                                                                            class="_1DUyz MFh2F"
+                                                                                                            data-playable-hook="download-button"
+                                                                                                            aria-label="Download video"
+                                                                                                            type="button"
+                                                                                                            tabindex="0">
+                                                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                                viewBox="0 0 26 26"
+                                                                                                                class="_2N2nU"
+                                                                                                                width="100%">
+                                                                                                                <g fill-rule="evenodd"
+                                                                                                                    class="wix-playable--download-svg-fill">
+                                                                                                                    <path
+                                                                                                                        d="M6 18h14v2H6v-2zm3.586-8.328L13 13.025v2.708l-4.828-4.647 1.414-1.414zM13 13.123l3.618-3.655 1.414 1.414L13 15.749v-2.626z">
+                                                                                                                    </path>
+                                                                                                                    <path
+                                                                                                                        d="M12 6h2v8l-1 2-1-2V6z">
+                                                                                                                    </path>
+                                                                                                                </g>
+                                                                                                            </svg> <svg
+                                                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                                                viewBox="0 0 35 35"
+                                                                                                                class="_1pfJh"
+                                                                                                                width="100%">
+                                                                                                                <path
+                                                                                                                    d="M16.5 17.586V7h2v10.825L23.571 13l1.414 1.414-7.085 6.743-.329.328-7.071-7.07L11.914 13l4.586 4.586zM5.5 26h24v2h-24v-2z"
+                                                                                                                    fill-rule="evenodd">
+                                                                                                                </path>
+                                                                                                            </svg>
+                                                                                                        </button></div>
+                                                                                                </div>
+                                                                                                <div class="_1dEJZ"
+                                                                                                    data-playable-hook="full-screen-container">
+                                                                                                    <div class="_1OBr8"
+                                                                                                        data-playable-hook="full-screen-control">
+                                                                                                        <button
+                                                                                                            class="qHUBa _3j5si"
+                                                                                                            data-playable-hook="full-screen-button"
+                                                                                                            aria-label="Enter full screen"
+                                                                                                            type="button"
+                                                                                                            tabindex="0">
+                                                                                                            <svg class="_1G0_t"
+                                                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                                                viewBox="0 0 26 26"
+                                                                                                                preserveAspectRatio="xMidYMin slice"
+                                                                                                                width="100%">
+                                                                                                                <path
+                                                                                                                    class="wix-playable--full-screen-svg-fill"
+                                                                                                                    fill-rule="evenodd"
+                                                                                                                    d="M8 16H6v4h4v-2H8v-2zM6 7v3h2V8h2V6H6v1zm14-1h-4v2h2v2h2V6zm-2 12h-2v2h4v-4h-2v2z">
+                                                                                                                </path>
+                                                                                                            </svg> <svg
+                                                                                                                class="_1WxBR"
+                                                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                                                viewBox="0 0 35 35"
+                                                                                                                preserveAspectRatio="xMidYMin slice"
+                                                                                                                width="100%">
+                                                                                                                <path
+                                                                                                                    class="wix-playable--full-screen-svg-fill"
+                                                                                                                    fill-rule="evenodd"
+                                                                                                                    d="M11 28h2v-6H7v2h4v4zm2-21h-2v4H7v2h6V7zm9 6h6v-2h-4V7h-2v6zm2 11h4v-2h-6v6h2v-4z">
+                                                                                                                </path>
+                                                                                                            </svg>
+                                                                                                        </button></div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="_1NskT"
+                                                                                                data-playable-hook="logo-container">
+                                                                                                <div class="_34dqY">
+                                                                                                    <button
+                                                                                                        class="_1BWPp MwmcC"
+                                                                                                        aria-label="Watch on site"
+                                                                                                        type="button"
+                                                                                                        tabindex="0">
+                                                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                            viewBox="0 0 26 26"
+                                                                                                            class="_2fFIh"
+                                                                                                            preserveAspectRatio="xMidYMin slice"
+                                                                                                            width="100%">
+                                                                                                            <path
+                                                                                                                fill-rule="evenodd"
+                                                                                                                class="wix-playable--logo-button-svg-fill"
+                                                                                                                d="M8 20H6V6h4v2H8v10h10v-2h2v4H8zM18 9.485l-4.586 4.586L12 12.657 16.657 8h-1.653V6H20v5.005h-2v-1.52z">
+                                                                                                            </path>
+                                                                                                        </svg> <svg
+                                                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                                                            viewBox="0 0 35 35"
+                                                                                                            class="J-VLB"
+                                                                                                            preserveAspectRatio="xMidYMin slice"
+                                                                                                            width="100%">
+                                                                                                            <path
+                                                                                                                fill-rule="evenodd"
+                                                                                                                class="wix-playable--logo-button-svg-fill"
+                                                                                                                d="M9 28H7V7h7.071v2H9v17h17v-5h2v7H9zm17-17.98l-8.586 8.587L16 17.192 24.192 9h-2.184V7H28v6.012h-2V10.02z">
+                                                                                                            </path>
+                                                                                                        </svg></button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="_29jrw BQnh4"
+                                                                                    data-playable-component=""
+                                                                                    data-playable-hook="loader"></div>
+                                                                                <div class="_1CRej _27HtR _31JZ-"
+                                                                                    data-playable-hook="overlay"
+                                                                                    data-playable-component="">
+                                                                                    <div class="_2tFRk"
+                                                                                        data-playable-hook="overlay-content"
+                                                                                        style="background-image: none;">
+                                                                                    </div>
+                                                                                    <div class="_13Oo9"
+                                                                                        data-playable-hook="overlay-play-button">
+                                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                            viewBox="0 0 36 36"
+                                                                                            preserveAspectRatio="xMidYMin slice"
+                                                                                            width="100%"
+                                                                                            style="padding-bottom: 100%; height: 1px; overflow: visible">
+                                                                                            <!-- padding-bottom: 100% * height/width -->
+                                                                                            <g fill="none"
+                                                                                                fill-rule="evenodd">
+                                                                                                <circle cx="18" cy="18"
+                                                                                                    r="17"
+                                                                                                    class="wix-playable--overlay-play-svg-stroke"
+                                                                                                    stroke-width="2">
+                                                                                                </circle>
+                                                                                                <path
+                                                                                                    class="wix-playable--overlay-play-svg-fill"
+                                                                                                    d="M23.935 17.708l-10.313 6.033V11.676z">
+                                                                                                </path>
+                                                                                            </g>
+                                                                                        </svg> </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <div id="comp-l9k1s8k2" class="_2Hij5 _3bcaz"
